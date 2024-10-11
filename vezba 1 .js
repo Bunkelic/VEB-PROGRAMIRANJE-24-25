@@ -1,0 +1,10 @@
+let isProgrammingLanguage = true;
+const dateOfBirth = "01.01.2004.";
+const COLOR_RED = "#F00";
+let firstNumber = 10;
+console.log(secondNumber/ firstNumber);
+let firstName = 'Andrej';
+let lastname = 'Buncic';
+console.log (firstName + '' + lastName);
+let isAdult = true;
+let isEmptCart = false;
