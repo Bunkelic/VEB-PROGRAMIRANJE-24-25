@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veb Programiranje – III Godina</title>
+</head>
+<body>
+
+  <!-- Zadatak 1: Ispisivanje trenutnog datuma -->
+  <script>
+    var currentDate = new Date(),
+        day = currentDate.getDate(),
+        month = currentDate.getMonth() + 1,
+        year = currentDate.getFullYear();
+    document.write(day + "/" + month + "/" + year);
+  </script>
+
+  <br><br>
+
+  <!-- Zadatak 2: Ispisivanje trenutnog vremena -->
+  <script>
+    var currentTime = new Date(),
+        hours = currentTime.getHours(),
+        minutes = currentTime.getMinutes();
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    document.write(hours + ":" + minutes);
+  </script>
+
+  <br><br>
+
+  <!-- Zadatak 3: Ispisivanje vremena u 12-časovnom formatu sa AM/PM -->
+  <script>
+    var currentTime = new Date(),
+        hours = currentTime.getHours(),
+        minutes = currentTime.getMinutes();
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    var suffix = "AM";
+    if (hours >= 12) {
+      suffix = "PM";
+      hours = hours - 12;
+    }
+    if (hours == 0) {
+      hours = 12;
+    }
+    document.write(hours + ":" + minutes + " " + suffix);
+  </script>
+
+  <br><br>
+
+  <!-- Zadatak 12: Ispisivanje današnjeg datuma u h1 -->
+  <script>
+    function ispis_datuma() {
+      var d = new Date();
+      var naziv_dana_u_nedelji = ['nedelja', 'ponedeljak', 'utorak', 'sreda', 'četvrtak', 'petak', 'subota'];
+      var i = d.getDay();
+      var dan_u_n = naziv_dana_u_nedelji[i];
+      var dan_u_m = d.getDate();
+      var m = d.getMonth() + 1;
+      var g = d.getFullYear();
+      document.getElementsByTagName('p')[0].innerHTML = '<h1>' + dan_u_n + ", " + dan_u_m + "." + m + ". " + g + ".</h1>";
+    }
+    ispis_datuma();
+  </script>
+
+  <br><br>
+
