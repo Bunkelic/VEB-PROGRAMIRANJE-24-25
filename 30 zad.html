@@ -65,7 +65,131 @@
       document.getElementsByTagName('p')[0].innerHTML = '<h1>' + dan_u_n + ", " + dan_u_m + "." + m + ". " + g + ".</h1>";
     }
     ispis_datuma();
+
   </script>
 
   <br><br>
+  <!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promena Boje Pozadine</title>
+  <style>
+    #btn {
+      background-color: #fff;
+      border: 1px solid #000;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+      width: 300px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <p id="btn">Promeni boju pozadine</p>
+
+  <script>
+    const btn = document.getElementById('btn');
+    
+    function randomColor() {
+      return Math.floor(Math.random() * 256);
+    }
+
+    function changeBackgroundColor() {
+      const red = randomColor();
+      const green = randomColor();
+      const blue = randomColor();
+      document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    }
+
+    btn.addEventListener('click', changeBackgroundColor);
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dva Ista Događaja</title>
+  <style>
+    #paragraf {
+      background-color: #fff;
+      border: 1px solid #000;
+      width: 300px;
+      padding: 10px;
+      text-align: center;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <p id="paragraf">Klikni da obojiš i proširiš ovaj paragraf.</p>
+
+  <script>
+    const paragraf = document.getElementById('paragraf');
+
+    function obojiParagraf() {
+      paragraf.style.backgroundColor = '#C70210';
+      paragraf.style.color = '#fff';
+      alert('Prva funkcija - paragraf obojen!');
+    }
+
+    function prosiriParagraf() {
+      paragraf.style.width = '500px';
+      alert('Druga funkcija - paragraf proširen!');
+    }
+
+    paragraf.addEventListener('click', obojiParagraf);
+    paragraf.addEventListener('click', prosiriParagraf);
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tri Različita Događaja</title>
+  <style>
+    #paragraf {
+      background-color: #fff;
+      border: 1px solid #000;
+      width: 300px;
+      padding: 10px;
+      text-align: center;
+      margin: 20px auto;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <p id="paragraf">Postavi miša preko, klikni ili pomeri miša!</p>
+
+  <script>
+    const paragraf = document.getElementById('paragraf');
+
+    function obojiParagraf() {
+      paragraf.style.backgroundColor = '#C70210';
+      paragraf.style.color = '#fff';
+    }
+
+    function prosiriParagraf() {
+      paragraf.style.width = '500px';
+    }
+
+    function promeniBoju() {
+      paragraf.style.backgroundColor = '#347fe1';
+      paragraf.style.color = '#fff';
+    }
+
+    paragraf.addEventListener('mouseover', obojiParagraf);
+    paragraf.addEventListener('click', prosiriParagraf);
+    paragraf.addEventListener('mouseout', promeniBoju);
+  </script>
+</body>
+</html>
+
 
